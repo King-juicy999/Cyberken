@@ -198,4 +198,4 @@ const main = async () => {
   await submitCollateralProofAfterTx(args[0]);
 };
 
-main().catch(console.error);
+main().catch((e) => { console.error(e); process.exit(1); });

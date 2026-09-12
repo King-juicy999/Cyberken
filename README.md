@@ -36,8 +36,9 @@ needs.
    trusting only the registered source contract address.
 3. If the fact clears a policy threshold, the contract unlocks or adjusts the borrower's
    credit line automatically, on-chain, no human in the loop.
-4. A `CreditLineUnlocked` event is emitted recording the borrower, new limit, and source
-   transaction hash, so the whole flow is auditable.
+4. A `CreditLineUnlocked` event is emitted recording the borrower, new limit, and a source
+   query identifier (queryId) derived from the Sepolia transaction, so the whole flow is
+   auditable.
 
 ```
 Sepolia (CollateralAttestor.sol)
@@ -65,6 +66,14 @@ Sepolia (CollateralAttestor.sol)
 - Directly aligned with Creditcoin's own thesis: real-world credit and lending infrastructure.
 - Honestly scoped: one clear cross-chain primitive, fully working, rather than a broad but
   shallow feature set.
+
+## Known Limitations
+
+This is a demonstration MVP: the collateral fact value is self-reported by the borrower
+via `CollateralAttestor`. The protocol verifies the source of the claim, not the claim
+itself — a production version would bind this to a real on-chain source such as an ERC20
+balance check rather than accept an arbitrary value. Facts also do not currently expire,
+so a stale fact keeps a credit line open indefinitely.
 
 ## Links
 
