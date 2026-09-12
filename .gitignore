@@ -1,0 +1,20 @@
+# Foundry
+out/
+cache/
+broadcast/
+
+# Node
+node_modules/
+.env
+.env.local
+
+# forge-std (vendored, see VERIFICATION-style setup)
+lib/forge-std/
+
+# TypeScript build artifacts
+dist/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
