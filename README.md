@@ -73,4 +73,4 @@ Sepolia (CollateralAttestor.sol)
 
 ---
 
-*Website crafted by Willy.*
+*Website crafted by William.*
